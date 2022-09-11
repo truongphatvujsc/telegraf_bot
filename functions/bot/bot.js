@@ -1,8 +1,8 @@
 const { Telegraf } = require("telegraf");
-const TOKEN = "5743333382:AAFwmtECfYfSndY_QYxLTdmPDm8VBYIF14c";
-const bot = new Telegraf(TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN)
+const web_link = process.env.SITE;
 
-const web_link = "https://gleaming-liger-99ff37.netlify.app/";
+//const web_link = "https://gleaming-liger-99ff37.netlify.app/";
 //const web_link = "http://localhost:3000";
 // bot.start((ctx) =>
 //   ctx.reply("Welcome :)))))", {
@@ -11,7 +11,7 @@ const web_link = "https://gleaming-liger-99ff37.netlify.app/";
 //     },
 //   })
 // );
-bot.command('start', ctx =>{
+bot.start( ctx =>{
     let startMessage = 'Welcome, this bot order foods';
     bot.telegram.sendMessage(ctx.chat.id, startMessage, {
         reply_markup: {
